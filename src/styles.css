@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-montserrat text-lg;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl mb-5 md:mb-6;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl mb-4 md:mb-5;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl mb-2 md:mb-4;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-montserrat font-medium leading-tight;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-5 py-3 font-medium outline-none rounded-full transition-all duration-200 inline-flex
+      disabled:cursor-not-allowed disabled:opacity-40 shadow hover:shadow-lg justify-center items-center
+      text-center text-lg;
+  }
+  .btn-primary {
+    @apply text-white bg-primary-600 hover:bg-primary-400 hover:text-black
+      focus:bg-primary-400 focus:text-black focus-within:bg-primary-400 focus-within:text-black
+      disabled:focus:bg-primary-600 disabled:hover:bg-primary-600 disabled:hover:text-white
+      disabled:focus-within:bg-primary-600 disabled:focus:text-white disabled:focus-within:text-white;
+  }
+
+  .btn-outline {
+    @apply text-primary-600 bg-white hover:bg-primary-400 hover:text-black ring-2
+    focus:bg-primary-400 focus:text-black focus-within:bg-primary-400 focus-within:text-black
+    ring-primary-600 hover:ring-primary-400 focus:ring-primary-400 focus-within:ring-primary-400;
+  }
+
+  .btn-danger {
+    @apply text-red-600 bg-white hover:bg-red-400 hover:text-black ring-2
+    focus:bg-red-400 focus:text-black focus-within:bg-red-400 focus-within:text-black
+    ring-red-600 hover:ring-red-400 focus:ring-red-400 focus-within:ring-red-400;
+  }
+
+  .custom_checkbox::after {
+    content: "";
+    @apply absolute border-b-2 border-l-2 border-transparent top-[30%] left-0 right-0 w-1/2 h-1/4 m-auto
+      rotate-[50] transition-colors;
+  }
+  .custom_checkbox:checked::after {
+    @apply bg-white;
+  }
+
+  .custom_checkbox:hover:not(:disabled):not(:checked) {
+    @apply shadow;
+  }
+
+  .custom_checkbox:focus {
+    @apply outline-none shadow;
+  }
+
+  .custom_checkbox:checked {
+    @apply bg-primary-800;
+  }
+
+  .custom_checkbox:disabled {
+    @apply cursor-default opacity-60;
+  }
+
+  .custom_currency_search_modal {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .custom_currency_search_modal::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 
+  div.custom__tooltip-container {
+    &[data-popper-placement^="top"] > ${Arrow} {
+      bottom: -4px;
+    }
+
+    &[data-popper-placement^="bottom"] > ${Arrow} {
+      top: -4px;
+    }
+
+    &[data-popper-placement^="left"] > ${Arrow} {
+      right: -4px;
+    }
+
+    &[data-popper-placement^="right"] > ${Arrow} {
+      left: -4px;
+    }
+  }*/
+
+  .custom__numeric-text-field {
+    -webkit-appearance: textfield;
+  }
+  .custom__numeric-text-field::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  .custom__numeric-text-field[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .custom__numeric-text-field::-webkit-outer-spin-button,
+  .custom__numeric-text-field::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}

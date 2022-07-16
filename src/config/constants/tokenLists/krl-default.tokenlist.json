@@ -1,0 +1,110 @@
+{
+  "name": "Kryptolite Default Token List",
+  "timestamp": "2022-01-26T11:45:09Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://kryptolite.rocks/assets/tokens/0xF1288cF18B1FAaA35F40111c3E5d2f827e1E920E.png",
+  "keywords": ["kryptolite", "default"],
+  "tokens": [
+    {
+      "name": "Kryptolite",
+      "symbol": "KRL",
+      "address": "0xF1288cF18B1FAaA35F40111c3E5d2f827e1E920E",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://kryptolite.rocks/assets/tokens/0xF1288cF18B1FAaA35F40111c3E5d2f827e1E920E.png"
+    },
+    {
+      "name": "WBNB Token",
+      "symbol": "WBNB",
+      "address": "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c.png"
+    },
+    {
+      "name": "BUSD Token",
+      "symbol": "BUSD",
+      "address": "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56.png"
+    },
+    {
+      "name": "Ethereum Token",
+      "symbol": "ETH",
+      "address": "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x2170Ed0880ac9A755fd29B2688956BD959F933F8.png"
+    },
+    {
+      "name": "BTCB Token",
+      "symbol": "BTCB",
+      "address": "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c.png"
+    },
+    {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "address": "0x55d398326f99059fF775485246999027B3197955",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0x55d398326f99059fF775485246999027B3197955.png"
+    },
+    {
+      "name": "BUSD Token",
+      "symbol": "BUSD",
+      "address": "0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee",
+      "chainId": 97,
+      "decimals": 18,
+      "logoURI": "https://pancakeswap.finance/images/tokens/0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56.png"
+    },
+    {
+      "name": "WAGMI ✊",
+      "symbol": "WAGMI",
+      "address": "0xF53FcB849d5e6Cc2D1cCABC0bb120AC192bfB5f8",
+      "chainId": 56,
+      "decimals": 9,
+      "logoURI": "https://kryptolite.rocks/assets/tokens/0xF53FcB849d5e6Cc2D1cCABC0bb120AC192bfB5f8.png"
+    },
+    {
+      "name": "TietoEVRY Corporation",
+      "symbol": "TTEB",
+      "address": "0xc776400C2e53AD1731aaCAF7c3F76e61236Fa0E1",
+      "chainId": 56,
+      "decimals": 9,
+      "logoURI": "https://kryptolite.rocks/assets/tokens/0xc776400C2e53AD1731aaCAF7c3F76e61236Fa0E1.png"
+    },
+    {
+      "name": "Lamborghini 2.0",
+      "symbol": "LAMBO",
+      "address": "0xd83a832AD7202612FA53E0317DF685A5Df7cA8b8",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://kryptolite.rocks/assets/tokens/0xd83a832AD7202612FA53E0317DF685A5Df7cA8b8.png"
+    },
+    {
+      "name": "Farmageddon",
+      "symbol": "FG",
+      "address": "0x4492cA0AFF6D603e18Aea5075B49A5ff76b9Ea06",
+      "chainId": 56,
+      "decimals": 9,
+      "logoURI": "https://kryptolite.rocks/assets/tokens/0x4492cA0AFF6D603e18Aea5075B49A5ff76b9Ea06.png"
+    },
+    {
+      "name": "Fertilizer",
+      "symbol": "FRT",
+      "address": "0xd51237A6F3219d186f0C8d8Dd957b1Bcb3Ce5d48",
+      "chainId": 56,
+      "decimals": 18,
+      "logoURI": "https://kryptolite.rocks/assets/tokens/0xd51237A6F3219d186f0C8d8Dd957b1Bcb3Ce5d48.png"
+    }
+  ]
+}
