@@ -18,7 +18,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
           {isExactIn ? "Minimum received" : "Maximum sold"}
           <QuestionHelper
             text="Your transaction will revert if there is a large, unfavorable price movement before it is confirmed."
-            placement="top-start"
+            placement="auto-start"
           />
         </div>
         <div className="flex">
