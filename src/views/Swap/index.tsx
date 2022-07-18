@@ -4,7 +4,6 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Button from "../../components/Buttons/Button";
 import ConnectWalletButton from "../../components/Buttons/ConnectWalletButton";
 import CurrencyInputPanel from "../../components/CurrencyInputPanel";
-import ImportTokenWarningModal from "../../components/ImportTokenWarningModal";
 import useModal from "../../components/Modal/useModal";
 import Skeleton from "../../components/widgets/Skeleton";
 import SlippageTabs from "../../components/widgets/TransactionSettings/TransactionSettings";
@@ -31,7 +30,7 @@ import SwapWarningModal from "./components/SwapWarningModal";
 import TradePrice from "./components/TradePrice";
 import UnsupportedCurrencyFooter from "./components/UnsupportedCurrencyFooter";
 import useRefreshBlockNumberID from "./hooks/useRefreshBlockNumber";
-import { navigate } from "@reach/router";
+import Link from "../../components/Link";
 
 interface SwapProps {
   baseToken: string;
@@ -261,17 +260,6 @@ export default function Swap({ baseToken }: SwapProps) {
 
   const swapIsUnsupported = useIsTransactionUnsupported(currencies?.INPUT, currencies?.OUTPUT);
 
-  const [onPresentImportTokenWarningModal] = useModal(
-    <ImportTokenWarningModal tokens={importTokensNotInDefault} onCancel={() => navigate("/swap")} />,
-  );
-
-  useEffect(() => {
-    if (importTokensNotInDefault.length > 0) {
-      onPresentImportTokenWarningModal();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [importTokensNotInDefault.length]);
-
   const [onPresentConfirmModal] = useModal(
     <ConfirmSwapModal
       trade={trade}
@@ -438,6 +426,12 @@ export default function Swap({ baseToken }: SwapProps) {
             </Button>
           )}
         </div>
+        <p className="text-xs text-gray-500 text-center mt-4">
+          Powered by{" "}
+          <Link to="https://kryptolite.rocks" className="text-primary-800 font-bold">
+            KRYPTOLITE
+          </Link>
+        </p>
       </div>
       {!swapIsUnsupported ? (
         trade && <AdvancedSwapDetailsDropdown trade={trade} />
