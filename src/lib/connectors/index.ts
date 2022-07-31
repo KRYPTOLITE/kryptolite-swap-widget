@@ -5,7 +5,7 @@ import getNodeUrl from "../../utils/getRpcUrl";
 
 const POLLING_INTERVAL = 6000;
 const rpcUrl = getNodeUrl();
-const chainId = parseInt(process.env.GATSBY_CHAIN_ID!, 10);
+const chainId = parseInt(process.env.REACT_APP_CHAIN_ID!, 10);
 
 // reset WalletConnect connector
 export const resetWalletConnectConnector = (connector: AbstractConnector) => {

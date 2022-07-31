@@ -10,7 +10,7 @@ import getRpcUrl from "./getRpcUrl";
 export const setupNetwork = async () => {
   const provider = window.ethereum;
   if (provider) {
-    const chainId = parseInt(process.env.GATSBY_CHAIN_ID!, 10);
+    const chainId = parseInt(process.env.REACT_APP_CHAIN_ID!, 10);
     try {
       if (!provider.request)
         throw new Error("Can't setup the BSC network on metamask because window.ethereum.request is undefined");

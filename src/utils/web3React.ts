@@ -7,7 +7,7 @@ import { ConnectorNames } from "../components/widgets/WalletModal/types";
 
 const POLLING_INTERVAL = 6000;
 const rpcUrl = getNodeUrl();
-const chainId = parseInt(process.env.GATSBY_CHAIN_ID!, 10);
+const chainId = parseInt(process.env.REACT_APP_CHAIN_ID!, 10);
 
 const injected = new InjectedConnector({ supportedChainIds: [chainId] });
 

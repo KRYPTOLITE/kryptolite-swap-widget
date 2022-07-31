@@ -14,6 +14,7 @@ import { getLibrary } from "./utils/web3React";
 import { LocationProvider } from "@reach/router";
 import AppWalletProvider from "./contexts/AppContext";
 import { usePollBlockNumber } from "./state/block/hooks";
+import { useEffect } from "react";
 
 function GlobalHooks() {
   usePollBlockNumber();
@@ -26,31 +27,57 @@ interface AppProps {
 }
 export function App(props: AppProps) {
   return (
-    <LocationProvider>
-      <Web3ReactProvider getLibrary={getLibrary}>
-        <Provider store={store}>
-          <AppWalletProvider referralAddress={props.referralAddress}>
-            <ToastsProvider>
-              <ToastListener />
-              <SWRConfig
-                value={{
-                  use: [fetchStatusMiddleware],
-                }}
-              >
-                <RefreshContextProvider>
-                  <ModalProvider>
-                    <GlobalHooks />
-                    <PersistGate loading={null} persistor={persistor}>
-                      <Updaters />
-                      <Swap baseToken={props.baseToken} />
-                    </PersistGate>
-                  </ModalProvider>
-                </RefreshContextProvider>
-              </SWRConfig>
-            </ToastsProvider>
-          </AppWalletProvider>
-        </Provider>
-      </Web3ReactProvider>
-    </LocationProvider>
+    <CollectAnonymousData>
+      <LocationProvider>
+        <Web3ReactProvider getLibrary={getLibrary}>
+          <Provider store={store}>
+            <AppWalletProvider referralAddress={props.referralAddress}>
+              <ToastsProvider>
+                <ToastListener />
+                <SWRConfig
+                  value={{
+                    use: [fetchStatusMiddleware],
+                  }}
+                >
+                  <RefreshContextProvider>
+                    <ModalProvider>
+                      <GlobalHooks />
+                      <PersistGate loading={null} persistor={persistor}>
+                        <Updaters />
+                        <Swap baseToken={props.baseToken} />
+                      </PersistGate>
+                    </ModalProvider>
+                  </RefreshContextProvider>
+                </SWRConfig>
+              </ToastsProvider>
+            </AppWalletProvider>
+          </Provider>
+        </Web3ReactProvider>
+      </LocationProvider>
+    </CollectAnonymousData>
   );
 }
+
+const CollectAnonymousData = (props: { children: JSX.Element }) => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const { origin } = window.location;
+      const serverUrl = process.env.REACT_APP_FRONTEND_URL;
+      const url = serverUrl + origin; // us?domain=yourdomain
+      // Keep track of projects using our widget
+      fetch(url)
+        .then(async (_res) => {
+          // send a get request to our server
+          /*  const [result] = await res.json();
+          if (result.status) {
+            console.log(result);
+          } */
+        })
+        .catch((_e) => {
+          // console.error(e) do nothing
+        });
+    }
+  }, []);
+
+  return props.children;
+};
